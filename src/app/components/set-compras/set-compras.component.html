@@ -1,0 +1,42 @@
+<div class="container-fluid">
+    <div class="modal-header">
+      <h3 class="modal-title" id="exampleModalLabel">Compra</h3>
+    </div>
+    <label for="idPersonas">Seleccione el cliente:</label>
+    <mat-select name="idPersonas" id="idPersonas" class="idPersonas" [(ngModel)]="personasSelected.idPersonas"
+      placeholder="Seleccione un cliente" (selectionChange)="getCompras()">
+      <mat-option *ngFor="let item of personas" [value]="item.idPersonas">
+        {{item.nombrePersona}}
+      </mat-option>
+    </mat-select>
+    <label for="idProductos">Seleccione el Producto:</label>
+    <mat-select name="idProductos" id="idProductos" class="idProductos" [(ngModel)]="productoSelected.idProductos"
+      placeholder="Seleccione un Producto">
+      <mat-option *ngFor="let item of productos" [value]="item.idProductos">
+        {{item.nombreProductos}}
+      </mat-option>
+    </mat-select>
+    <button mat-raised-button (click)="setCompra()" style="margin-right: 10px;">Registrar Compra</button>
+  
+    <table class="table table-hover">
+        <thead>
+          <tr style="text-align: center;">
+            <th scope="col">Nombre Cliente</th>
+            <th scope="col">Número Cliente</th>
+            <th scope="col">Producto</th>
+            <th scope="col">ValorProducto</th>
+            <th scope="col">Codigo Producto</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of compras" style="text-align: center;">
+            <td>{{item.nombrePersona}}</td>
+            <td>{{item.telefonoPersona}}</td>
+            <td>{{item.nombreProductos}}</td>
+            <td>{{item.valorProducto}}</td>
+            <td>{{item.codProductos}}</td>
+            
+          </tr>
+          
+        </tbody>
+      </table>

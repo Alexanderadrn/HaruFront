@@ -1,0 +1,32 @@
+<div class="d-grid gap-2 d-md-block">
+  <button type="button" style="margin:10px 0;" class="btn btn-outline-success"(click)="registrarProducto()">Insertar Producto</button>
+</div>
+<table class="table table-hover">
+  
+    <thead>
+      <tr style="text-align: center;">
+        <th scope="col">Nombre Producto</th>
+        <th scope="col">Codigo Producto</th>
+        <th scope="col">Valor</th>
+        <th scope="col">Cantidad Disponible</th>
+        <th scope="col">Acciones</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of productos" style="text-align: center;">
+        <td>{{item.nombreProductos}}</td>
+        <td>{{item.codProducto}}</td>
+        <td>{{item.valorProducto}}</td>
+        <td>{{item.stockProducto}}</td>
+        
+        <td>
+          <button class="btn"  style="margin: 0 5px; color: rgb(91, 248, 91);"(click)="actualizarProductos(item)"><mat-icon>edit_square</mat-icon>Editar</button>
+          
+          <button  class="btn" style="margin: 0 5px;color:rgb(255, 65, 65)" (click)="openConfirmationDialog(item)"><mat-icon>delete</mat-icon>Eliminar</button>
+        </td>
+       
+      </tr>
+      
+    </tbody>
+  </table>

@@ -1,0 +1,40 @@
+<div class="content d-flex justify-content-center" style="box-sizing: border-box;">
+    <div class="row justify-content-center">
+      <div class="col text-center">
+        <h1>Clientes</h1>
+  
+        <form>
+            <div class="row" style="margin-bottom: 10px;">
+            <div class="col">
+              <label for="form-control">Nombre:</label>
+              <input type="text" class="form-control" name="nombrePersona" (keypress)="onKeyPressTexto($event)"[(ngModel)]="personas.nombrePersona">
+            </div>
+            <div class="col">
+              <label for="form-control">Cedula:</label>
+              <input type="email" class="form-control" name="cedulaPersona"(keypress)="onKeyPressNumero($event)" [(ngModel)]="personas.cedulaPersona">
+            </div>
+          </div>
+          <div class="row" style="margin-bottom: 10px;">
+            <div class="col">
+              <label for="form-control">Telefono:</label>
+              <input type="text" class="form-control" name="telefonoPersona"(keypress)="onKeyPressNumero($event)"  [(ngModel)]="personas.telefonoPersona">
+            </div>
+            <div class="col">
+              <label for="form-control">Direccion:</label>
+              <input type="text" class="form-control" name="direccionPersona" [(ngModel)]="personas.direccionPersona">
+            </div>
+          </div>
+          <div class="row" style="margin-bottom: 10px;">
+            <div class="col">
+              <label for="form-control">Email:</label>
+              <input type="text" class="form-control" name="emailPersona"[(ngModel)]="personas.emailPersona">
+            </div>
+           </div>
+        </form>
+         <div>
+          <button class="btn btn-secondary" style="margin: 5px;" (click)="setPersonas()">{{titulo}}</button>
+          <button class="btn btn-primary" style="margin: 5px;" (click)="dismissModal()">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>

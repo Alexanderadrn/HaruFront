@@ -1,0 +1,38 @@
+<div class="content d-flex justify-content-center" style="box-sizing: border-box;">
+    <div class="row justify-content-center">
+        <div class="col text-center">
+            <h1>Productos</h1>
+
+            <form>
+                <div class="row" style="margin-bottom: 10px;">
+                    <div class="col">
+                        <label for="form-control">Nombre Producto:</label>
+                        <input type="text" class="form-control" name="nombreProductos"
+                             [(ngModel)]="productos.nombreProductos">
+                    </div>
+                    <div class="col">
+                        <label for="form-control">Valor Producto:</label>
+                        <input type="email" class="form-control" name="valorProducto"
+                            (keypress)="onKeyPressNumero($event)" [(ngModel)]="productos.valorProducto">
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 10px;">
+                    <div class="col">
+                        <label for="form-control">Codigo:</label>
+                        <input type="text" class="form-control" name="codProducto"
+                            (keypress)="onKeyPressNumero($event)" [(ngModel)]="productos.codProducto">
+                    </div>
+                    <div class="col">
+                        <label for="form-control">Cantidad:</label>
+                        <input type="text" class="form-control" name="stockProducto"
+                            [(ngModel)]="productos.stockProducto">
+                    </div>
+                </div>
+            </form>
+            <div>
+                <button class="btn btn-secondary" style="margin: 5px;" (click)="setProductoss()">{{titulo}}</button>
+                <button class="btn btn-primary" style="margin: 5px;" (click)="dismissModal()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
